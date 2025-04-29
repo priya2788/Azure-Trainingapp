@@ -1,13 +1,15 @@
-const express = require("express");
+// server.js
+import express from 'express';
+import dotenv from 'dotenv';
+
+dotenv.config();
 const app = express();
+const port = process.env.PORT || 3000;
 
-const PORT = process.env.PORT || 3000;
-
-app.get("/", (req, res) => {
-  res.send("🚀 Hello from Azure App Service via Git Deployment!");
+app.get('/', (req, res) => {
+  res.send('Hello from Azure staging slot!');
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Server running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
-
