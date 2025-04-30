@@ -30,7 +30,7 @@ jobs:
           npm run test --if-present
 
       - name: Zip artifact for deployment
-        run: zip -r release.zip ./build
+        run: zip -r release.zip server.js package.json node_modules
 
 
       - name: Upload artifact for deployment job
